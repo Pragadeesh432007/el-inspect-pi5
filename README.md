@@ -54,7 +54,7 @@ Limits of the advisor: a 1B model can still write a vague or slightly wrong sent
 ## How it works
 1. **Data**: PVEL-AD (1024x1024 EL cell images, XML boxes). The 12 defect classes are grouped into 7: crack, finger, black_core, thick_line, short_circuit, dislocation, other. Images are resized to 384x384 grayscale (defects are small).
 2. **Model**: MobileNetV3-Small, 1-channel input, 8 sigmoid outputs (7 defect groups + "defective"), trained on a laptop CPU.
-3. **INT8**: ONNX Runtime static quantisation. Naive INT8 collapsed (AUC 0.98 to 0.70). A per-layer scan found only the first conv and the first depthwise conv are sensitive; keeping those two in FP32 and using percentile calibration keeps accuracy. INT8 uses its own validation-tuned thresholds.
+3. **INT8**: ONNX Runtime static quantisation. Naive INT8 collapsed (AUC 0.98 to about 0.7). A per-layer scan found only the first conv and the first depthwise conv are sensitive; keeping those two in FP32 and using percentile calibration keeps accuracy. INT8 uses its own validation-tuned thresholds.
 4. **Health report**: severity from defect type (black_core, short_circuit = High; crack, dislocation, thick_line, other = Medium; finger = Low; 3 or more types raise it one level), plus a suggested action. These are our own engineering rules, not an industry standard.
 
 ## AI advisory (pipeline B)

@@ -52,7 +52,7 @@ INT8 matches FP32 on the headline defective-vs-good decision but is weaker on th
 
 ## Edge optimisation: ONNX and INT8
 - Exported to ONNX (opset 17), input 1x1x384x384.
-- Naive INT8 (all layers, ONNX Runtime static quantisation) collapsed: AUC 0.98 -> about 0.70.
+- Naive INT8 (all layers, ONNX Runtime static quantisation) collapsed: AUC 0.98 -> about 0.7 (0.67 to 0.72 depending on the run and split).
 - Cause found by a per-layer scan: only the first conv and the first depthwise conv are sensitive (AUC drop 0.25 and 0.30). All other 50 convs lose nothing measurable.
 - Fix: keep those two layers in FP32, quantise the rest (static, QDQ, per-channel weights, percentile 99.999 calibration on 128 validation images). Calibration images were never used to choose or report results.
 - Another pitfall found: ONNX Runtime's quant_pre_process step corrupted quantisation for this model; quantising from the original export fixed it.
