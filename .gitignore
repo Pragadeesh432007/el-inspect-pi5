@@ -1,0 +1,25 @@
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# datasets and generated arrays (too big; see README for how to get them)
+data/
+raw_rgb/
+extra_el/
+demo_pairs/
+
+# old experiment checkpoints and outputs
+models/el_*
+models/rgb_*
+models/*.png
+report.png
+report.json
+test.jpg
+bench_*.json
+*.zip
+*.rar
+*.pte
+advisory_log.jsonl
+*.mp4

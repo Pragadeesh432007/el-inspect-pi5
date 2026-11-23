@@ -1,0 +1,54 @@
+{
+  "fp32_val": {
+    "auc": 0.9843258647798742,
+    "acc": 0.956
+  },
+  "configs": [
+    {
+      "config": "percentile99.99+keepSE+tail",
+      "val_auc": 0.7220093029350104,
+      "val_acc": 0.636,
+      "mean_agreement": 0.8425,
+      "pc_ms": 3.4576649999507936,
+      "size_mb": 4.733242034912109,
+      "file": "pi_bundle\\_try_0.onnx"
+    },
+    {
+      "config": "minmax+keepSE+tail",
+      "val_auc": 0.5980493317610063,
+      "val_acc": 0.576,
+      "mean_agreement": 0.70275,
+      "pc_ms": 3.256234999935259,
+      "size_mb": 4.7332258224487305,
+      "file": "pi_bundle\\_try_1.onnx"
+    },
+    {
+      "config": "percentile99.99",
+      "val_auc": 0.7239992793501047,
+      "val_acc": 0.614,
+      "mean_agreement": 0.838,
+      "pc_ms": 4.0813000001435285,
+      "size_mb": 1.7873563766479492,
+      "file": "pi_bundle\\_try_2.onnx"
+    },
+    {
+      "config": "percentile99.99+keepSE+tail+firstconv",
+      "val_auc": 0.7139838836477987,
+      "val_acc": 0.622,
+      "mean_agreement": 0.83975,
+      "pc_ms": 4.838974999984202,
+      "size_mb": 4.732626914978027,
+      "file": "pi_bundle\\_try_3.onnx"
+    },
+    {
+      "config": "entropy+keepSE+tail",
+      "val_auc": 0.5980493317610063,
+      "val_acc": 0.576,
+      "mean_agreement": 0.70275,
+      "pc_ms": 4.654074999962177,
+      "size_mb": 4.7332258224487305,
+      "file": "pi_bundle\\_try_4.onnx"
+    }
+  ],
+  "best": "percentile99.99"
+}
