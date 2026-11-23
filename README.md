@@ -2,6 +2,8 @@
 
 Arm Bharat AI-SoC Challenge 2026-27, problem statement PS5: *Real-time industrial defect detection and quality control assistant* (theme: Applied AI on SoC).
 
+**Demo video:** https://drive.google.com/file/d/1EX1ci5akcCfGneSNC4i1A7nLsg_3FYG2/view?usp=drivesdk
+
 An edge AI assistant that looks at an electroluminescence (EL) image of a solar cell, decides whether it is defective, names the defect type(s), and produces a health report (fault type, severity, suggested action). Everything runs on-device, CPU-only, on a Raspberry Pi 5 (4 GB, no accelerator), with no cloud.
 
 It is two pipelines on one board:
